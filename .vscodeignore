@@ -1,0 +1,7 @@
+# Ignore everything
+*
+
+# Except the build directories we need
+!vscode/out/**/*
+!webview/dist/**/*
+
