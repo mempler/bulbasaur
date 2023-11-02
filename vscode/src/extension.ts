@@ -1,15 +1,11 @@
-import { window, workspace, commands, ExtensionContext } from "vscode";
-import { HelloWorldPanel } from "./panels/HelloWorldPanel";
+import { window, commands, ExtensionContext } from "vscode";
+import { ProjectSettingsProvider } from "./providers/ProjectSettingsProvider";
 
 export function activate(context: ExtensionContext) {
   context.subscriptions.push(
-    commands.registerCommand("hello-world.showHelloWorld", () => {
-      HelloWorldPanel.render(context.extensionUri);
-    }),
+    commands.registerCommand("bulbasaur.createGodotProject", () => createGodotProject().catch(window.showErrorMessage)),
 
-    commands.registerCommand("bulbasaur.createGodotProject", () =>
-      createGodotProject().catch(window.showErrorMessage)
-    )
+    ProjectSettingsProvider.register(context)
   );
 }
 

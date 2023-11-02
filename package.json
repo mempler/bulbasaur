@@ -72,6 +72,18 @@
         "scopeName": "source.gdshader",
         "path": "./syntax/GDShader.tmLanguage.json"
       }
+    ],
+    "customEditors": [
+      {
+        "viewType": "bulbasaur.projectSettings",
+        "displayName": "Project Settings",
+        "selector": [
+          {
+            "filenamePattern": "project.godot"
+          }
+        ],
+        "priority": "default"
+      }
     ]
   },
   "devDependencies": {
