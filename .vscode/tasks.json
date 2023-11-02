@@ -1,0 +1,98 @@
+// See https://go.microsoft.com/fwlink/?LinkId=733558
+// for the documentation about the tasks.json format
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "watch",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"dependsOn":[
+				"watch-vscode",
+				"watch-webview"
+			]
+		},
+
+		{
+			"label": "watch-vscode",
+			"type": "npm",
+			"script": "watch",
+			"problemMatcher": [
+				{
+                    "owner": "typescript",
+                    "source": "Typescript",
+                    "fileLocation": "absolute",
+                    "applyTo": "allDocuments",
+                    "background": {
+                        "activeOnStart": true,
+                        "beginsPattern": "build started\\.\\.\\.",
+						"endsPattern": "built in \\d+\\ms\\.",
+                    },
+                    "pattern": [
+                        {
+                            "regexp": "(ERROR|WARNING)\\(TypeScript\\)  (.*)",
+                            "severity": 1,
+                            "message": 2
+                        },
+                        {
+                            "regexp": "^ FILE  (.*):(\\d*):(\\d*)$",
+                            "file": 1,
+                            "line": 2,
+                            "column": 3
+                        }
+                    ]
+                }
+			],
+			"isBackground": true,
+			"presentation": {
+				"reveal": "never"
+			},
+			"group": {
+				"kind": "build",
+			},
+			"path": "vscode"
+		},
+
+		{
+			"label": "watch-webview",
+			"type": "npm",
+			"script": "watch",
+			"problemMatcher": [
+				{
+                    "owner": "typescript",
+                    "source": "Typescript",
+                    "fileLocation": "absolute",
+                    "applyTo": "allDocuments",
+                    "background": {
+                        "activeOnStart": true,
+                        "beginsPattern": "build started\\.\\.\\.",
+						"endsPattern": "built in \\d+\\ms\\.",
+                    },
+                    "pattern": [
+                        {
+                            "regexp": "(ERROR|WARNING)\\(TypeScript\\)  (.*)",
+                            "severity": 1,
+                            "message": 2
+                        },
+                        {
+                            "regexp": "^ FILE  (.*):(\\d*):(\\d*)$",
+                            "file": 1,
+                            "line": 2,
+                            "column": 3
+                        }
+                    ]
+                }
+			],
+			"isBackground": true,
+			"presentation": {
+				"reveal": "never"
+			},
+			"group": {
+				"kind": "build",
+			},
+			"path": "webview"
+		}
+	]
+}

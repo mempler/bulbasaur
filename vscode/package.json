@@ -1,0 +1,15 @@
+{
+  "name": "@bulbasaur/vscode-extension",
+  "scripts": {
+    "build": "vite build",
+    "watch": "vite build --watch"
+  },
+  "devDependencies": {
+    "@types/glob": "^8.1.0",
+    "@types/node": "^20.8.10",
+    "@types/vscode": "^1.83.2",
+    "glob": "^10.3.10",
+    "typescript": "^5.2.2",
+    "vite": "^4.5.0"
+  }
+}
