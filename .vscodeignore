@@ -1,7 +1,11 @@
 # Ignore everything
 *
 
-# Except the build directories we need
+# Except our build directories
 !vscode/out/**/*
 !webview/dist/**/*
+
+# And resource files
+!resources/**/*
+!syntax/**/*
 

@@ -11,6 +11,66 @@
       {
         "command": "hello-world.showHelloWorld",
         "title": "Hello World (Svelte): Show"
+      },
+      {
+        "command": "bulbasaur.createGodotProject",
+        "title": "Bulbasaur: Create Godot Project"
+      }
+    ],
+    "languages": [
+      {
+        "id": "gdscript",
+        "aliases": [
+          "GDScript",
+          "gdscript"
+        ],
+        "extensions": [
+          ".gd"
+        ],
+        "configuration": "./configurations/gdscript-configuration.json"
+      },
+      {
+        "id": "gdresource",
+        "aliases": [
+          "GDResource",
+          "gdresource"
+        ],
+        "extensions": [
+          "godot",
+          "tres",
+          "tscn",
+          "import",
+          "gdns",
+          "gdnlib"
+        ],
+        "configuration": "./configurations/gdresource-configuration.json"
+      },
+      {
+        "id": "gdshader",
+        "aliases": [
+          "gdshader"
+        ],
+        "extensions": [
+          ".gdshader"
+        ],
+        "configuration": "./configurations/gdshader-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "gdscript",
+        "scopeName": "source.gdscript",
+        "path": "./syntax/GDScript.tmLanguage.json"
+      },
+      {
+        "language": "gdresource",
+        "scopeName": "source.gdresource",
+        "path": "./syntax/GDResource.tmLanguage.json"
+      },
+      {
+        "language": "gdshader",
+        "scopeName": "source.gdshader",
+        "path": "./syntax/GDShader.tmLanguage.json"
       }
     ]
   },

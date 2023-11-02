@@ -1,12 +1,20 @@
-import { commands, ExtensionContext } from "vscode";
+import { window, workspace, commands, ExtensionContext } from "vscode";
 import { HelloWorldPanel } from "./panels/HelloWorldPanel";
 
 export function activate(context: ExtensionContext) {
-  // Create the show hello world command
-  const showHelloWorldCommand = commands.registerCommand("hello-world.showHelloWorld", () => {
-    HelloWorldPanel.render(context.extensionUri);
-  });
+  context.subscriptions.push(
+    commands.registerCommand("hello-world.showHelloWorld", () => {
+      HelloWorldPanel.render(context.extensionUri);
+    }),
 
-  // Add command to the extension context
-  context.subscriptions.push(showHelloWorldCommand);
+    commands.registerCommand("bulbasaur.createGodotProject", () =>
+      createGodotProject().catch(window.showErrorMessage)
+    )
+  );
+}
+
+function createGodotProject() {
+  return new Promise(async (_resolve, reject) => {
+    return reject("Not implemented yet");
+  });
 }
